@@ -1,7 +1,7 @@
 {
-    "name": "@carrismetropolitana/api-parse-network",
+    "name": "@carrismetropolitana/eslint",
     "type": "module",
-    "version": "2024.05.051817",
+    "version": "2024.5.51825",
     "main": "index.js",
     "scripts": {
         "start": "node index.js",
@@ -10,7 +10,7 @@
         "build": "tsc && resolve-tspaths",
         "watch": "tsc -w",
         "bump": "node bump-version.js",
-        "publish": "npm publish --access public"
+        "send": "npm publish --access public"
     },
     "homepage": "https://github.com/carrismetropolitana/eslint#readme",
     "repository": {
