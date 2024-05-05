@@ -12,9 +12,10 @@
       "@/parsers/*": ["parsers/*"]
     },
     "allowJs": true,
-    "outDir": "build",
+    "outDir": "dist",
     "sourceMap": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "declaration": true
   },
   "exclude": ["**/node_modules", "**/.*/", "**/build/"]
 }
