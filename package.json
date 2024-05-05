@@ -1,18 +1,39 @@
 {
-    "name": "@carrismetropolitana/eslint",
-    "version": "2024.05.051630",
-    "description": "ESLint Rules for Carris Metropolitana codebases.",
+    "name": "@carrismetropolitana/api-parse-network",
+    "type": "module",
+    "version": "2024.05.051817",
+    "private": true,
     "main": "index.js",
     "scripts": {
-        "start": "npm start"
+        "start": "node index.js",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix",
+        "build": "tsc && resolve-tspaths",
+        "watch": "tsc -w"
     },
-    "author": "",
-    "license": "ISC",
+    "homepage": "https://github.com/carrismetropolitana/eslint#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/carrismetropolitana/eslint.git"
+    },
+    "bugs": {
+        "url": "https://github.com/carrismetropolitana/eslint/issues"
+    },
+    "keywords": [
+        "public transit",
+        "eslint",
+        "lint"
+    ],
+    "author": "João de Vasconcelos",
+    "license": "AGPL-3.0-or-later",
     "devDependencies": {
         "@eslint/js": "9.2.0",
+        "@stylistic/eslint-plugin": "1.8.0",
+        "@types/node": "20.12.8",
         "eslint": "8.57.0",
         "eslint-plugin-react": "7.34.1",
         "globals": "15.1.0",
+        "typescript": "5.4.5",
         "typescript-eslint": "7.8.0"
     }
 }

@@ -1,11 +1,14 @@
-/* * */
-
-const fs = require('fs');
-const pJson = require('./package.json');
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-var-requires */
 
 /* * */
 
-const now = new Date();
+import fs from 'fs';
+import pJson from './package.json' with { type: 'json' };
+
+/* * */
+
+const now = new Date;
 const year = now.getFullYear();
 const month = padNumber(now.getMonth() + 1);
 const day = padNumber(now.getDate());
@@ -21,5 +24,5 @@ fs.writeFileSync('./package.json', JSON.stringify(pJson, null, 4));
 /* * */
 
 function padNumber(number) {
-  return number.toString().padStart(2, '0');
+	return number.toString().padStart(2, '0');
 }

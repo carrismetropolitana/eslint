@@ -4,8 +4,6 @@
 
   "files.eol": "\n",
 
-  "eslint.workingDirectories": ["./parse-network", "./parse-datasets", "./server"],
-
   // Enable the ESlint flat config support
   "eslint.experimental.useFlatConfig": true,
 
@@ -49,5 +47,5 @@
     "yaml",
     "toml",
     "astro"
-  ]
+  ],
 }
