@@ -1,7 +1,7 @@
 {
     "name": "@carrismetropolitana/eslint",
     "type": "module",
-    "version": "2024.5.51848",
+    "version": "2024.5.51855",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "files": [
@@ -14,7 +14,7 @@
         "build": "tsc",
         "watch": "tsc -w",
         "bump": "node bump-version.js",
-        "send": "npm run bump && rm -r ./dist && npm run build && npm publish --access public && rm -r ./dist"
+        "send": "npm run bump && rm -rf ./dist && npm run build && npm publish"
     },
     "publishConfig": {
         "access": "public"
