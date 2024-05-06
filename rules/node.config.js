@@ -21,9 +21,9 @@ export default tseslint.config(
 			parser: parserTs,
 			sourceType: 'module',
 			ecmaVersion: 2020,
-      globals: {
-        ...globals.node
-      }
+			globals: {
+				...globals.node,
+			},
 		},
 	},
 
@@ -87,7 +87,6 @@ export default tseslint.config(
 			'generator-star-spacing': [
 				'error', { before: false, after: true },
 			],
-
 			'indent': [
 				'error', 'tab',
 			],
@@ -188,7 +187,7 @@ export default tseslint.config(
 				'error', 'beside',
 			],
 			'@stylistic/array-bracket-newline': [
-				'error', 'always',
+				'error', 'consistent',
 			],
 			'@stylistic/no-multi-spaces': [
 				'error', { 'includeTabs': true },
