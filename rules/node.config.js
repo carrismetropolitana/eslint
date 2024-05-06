@@ -7,6 +7,7 @@ import tsPlugin from '@typescript-eslint/eslint-plugin';
 import parserTs from '@typescript-eslint/parser';
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
+import globals from 'globals';
 
 /* * */
 
@@ -20,6 +21,9 @@ export default tseslint.config(
 			parser: parserTs,
 			sourceType: 'module',
 			ecmaVersion: 2020,
+      global: {
+        ...globals.node
+      }
 		},
 	},
 
