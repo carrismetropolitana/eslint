@@ -21,7 +21,7 @@ export default tseslint.config(
 			parser: parserTs,
 			sourceType: 'module',
 			ecmaVersion: 2020,
-      global: {
+      globals: {
         ...globals.node
       }
 		},
