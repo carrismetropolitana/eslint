@@ -180,7 +180,15 @@ export default tseslint.config(
 				'error', { before: false, after: true },
 			],
 			'@typescript-eslint/no-unused-vars': [
-				'warn', { argsIgnorePattern: '^_' },
+				'warn', {
+					'args': 'all',
+					'argsIgnorePattern': '^_',
+					'caughtErrors': 'all',
+					'caughtErrorsIgnorePattern': '^_',
+					'destructuredArrayIgnorePattern': '^_',
+					'varsIgnorePattern': '^_',
+					'ignoreRestSiblings': true,
+				},
 			],
 			'@typescript-eslint/no-explicit-any': 'warn',
 			'@stylistic/implicit-arrow-linebreak': [
