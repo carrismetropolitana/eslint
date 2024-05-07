@@ -1,7 +1,7 @@
 {
     "name": "@carrismetropolitana/eslint",
     "type": "module",
-    "version": "2024.5.51855",
+    "version": "2024.5.6151",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "files": [
