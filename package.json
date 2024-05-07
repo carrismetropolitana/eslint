@@ -1,7 +1,7 @@
 {
     "name": "@carrismetropolitana/eslint",
     "type": "module",
-    "version": "2024.5.71113",
+    "version": "2024.5.71115",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "files": [
@@ -37,10 +37,11 @@
     "dependencies": {
         "@eslint/js": "9.2.0",
         "@stylistic/eslint-plugin": "1.8.0",
+        "@typescript-eslint/eslint-plugin": "7.8.0",
         "eslint": "8.57.0",
+        "eslint-config-next": "14.2.3",
         "globals": "15.1.0",
-        "typescript-eslint": "7.8.0",
-        "eslint-config-next": "14.2.3"
+        "typescript-eslint": "7.8.0"
     },
     "devDependencies": {
         "@types/eslint__js": "8.42.3",
