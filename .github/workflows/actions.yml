@@ -28,7 +28,11 @@ jobs:
         run: node bump-version.js
 
       - name: Install NPM dependencies
-        run: npm install --omit-dev
+        run: npm install
+        working-directory: .
+
+      - name: Build Package
+        run: npm build
         working-directory: .
 
       - name: Publish package to NPM
