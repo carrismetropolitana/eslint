@@ -2,42 +2,57 @@
 
 /* * */
 
-import stylistic from '@stylistic/eslint-plugin';
-import tsPlugin from '@typescript-eslint/eslint-plugin';
-import parserTs from '@typescript-eslint/parser';
 import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
+import stylistic from '@stylistic/eslint-plugin';
+import perfectionist from 'eslint-plugin-perfectionist';
+import perfectionistNatural from 'eslint-plugin-perfectionist/configs/recommended-natural';
 import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 /* * */
 
 export default tseslint.config(
+
+	{
+		// config with just ignores is the replacement for `.eslintignore`
+		ignores: ['**/build/**', '**/dist/**', '**/.next/**'],
+	},
+
 	eslint.configs.recommended,
+
 	...tseslint.configs.strict,
 	...tseslint.configs.stylistic,
 
 	{
+		plugins: {
+			'@perfectionist': perfectionist,
+			'@stylistic': stylistic,
+		},
+	},
+
+	perfectionistNatural,
+
+	stylistic.configs['recommended-flat'],
+
+	{
 		languageOptions: {
-			parser: parserTs,
-			sourceType: 'module',
 			ecmaVersion: 2020,
 			globals: {
 				...globals.node,
 			},
+			parser: tseslint.parser,
+			parserOptions: {
+				project: true,
+			},
+			sourceType: 'module',
 		},
 	},
 
 	{
 		files: [
-			'**/*.js', '**/*.ts', '**/*.tsx', '**/*.jsx', '**/*.mjs', '**/*.cjs', '**/*.yml', '**/*.yaml',
+			'**/*.js', '**/*.ts', '**/*.tsx', '**/*.jsx',
 		],
-
-		plugins: {
-			'@stylistic': stylistic,
-			'@tsplugin': tsPlugin,
-		},
 		rules: {
-			'no-var': 'error',
 			'array-bracket-newline': [
 				'error', 'consistent',
 			],
@@ -61,7 +76,7 @@ export default tseslint.config(
 				'error', 'always-multiline',
 			],
 			'comma-spacing': [
-				'error', { before: false, after: true },
+				'error', { after: true, before: false },
 			],
 			'comma-style': [
 				'error', 'last',
@@ -85,7 +100,7 @@ export default tseslint.config(
 				'error', 'consistent',
 			],
 			'generator-star-spacing': [
-				'error', { before: false, after: true },
+				'error', { after: true, before: false },
 			],
 			'indent': [
 				'error', 'tab',
@@ -94,10 +109,10 @@ export default tseslint.config(
 				'error', 'prefer-double',
 			],
 			'key-spacing': [
-				'error', { beforeColon: false, afterColon: true },
+				'error', { afterColon: true, beforeColon: false },
 			],
 			'keyword-spacing': [
-				'error', { before: true, after: true },
+				'error', { after: true, before: true },
 			],
 			'linebreak-style': [
 				'error', 'unix',
@@ -114,15 +129,16 @@ export default tseslint.config(
 			'no-mixed-spaces-and-tabs': 'error',
 			'no-multi-spaces': 'error',
 			'no-multiple-empty-lines': [
-				'error', { max: 1, maxEOF: 0, maxBOF: 0 },
+				'error', { max: 1, maxBOF: 0, maxEOF: 0 },
 			],
 			'no-trailing-spaces': 'error',
+			'no-var': 'error',
 			'no-whitespace-before-property': 'error',
 			'nonblock-statement-body-position': [
 				'error', 'beside',
 			],
 			'object-curly-newline': [
-				'error', { multiline: true, consistent: true },
+				'error', { consistent: true, multiline: true },
 			],
 			'object-curly-spacing': [
 				'error', 'always',
@@ -137,7 +153,7 @@ export default tseslint.config(
 				'error', 'never',
 			],
 			'quotes': [
-				'error', 'single', { avoidEscape: true, allowTemplateLiterals: true },
+				'error', 'single', { allowTemplateLiterals: true, avoidEscape: true },
 			],
 			'rest-spread-spacing': [
 				'error', 'never',
@@ -146,7 +162,7 @@ export default tseslint.config(
 				'error', 'always',
 			],
 			'semi-spacing': [
-				'error', { 'before': false, 'after': true },
+				'error', { 'after': true, 'before': false },
 			],
 			'semi-style': [
 				'error', 'last',
@@ -155,14 +171,14 @@ export default tseslint.config(
 				'error', 'always',
 			],
 			'space-before-function-paren': [
-				'error', { anonymous: 'always', named: 'never', asyncArrow: 'always' },
+				'error', { anonymous: 'always', asyncArrow: 'always', named: 'never' },
 			],
 			'space-in-parens': [
 				'error', 'never',
 			],
 			'space-infix-ops': 'error',
 			'space-unary-ops': [
-				'error', { words: true, nonwords: false },
+				'error', { nonwords: false, words: true },
 			],
 			'switch-colon-spacing': [
 				'error', { after: true, before: false },
@@ -177,28 +193,7 @@ export default tseslint.config(
 				'error', 'inside',
 			],
 			'yield-star-spacing': [
-				'error', { before: false, after: true },
-			],
-			'@typescript-eslint/no-unused-vars': [
-				'warn', {
-					'args': 'all',
-					'argsIgnorePattern': '^_',
-					'caughtErrors': 'all',
-					'caughtErrorsIgnorePattern': '^_',
-					'destructuredArrayIgnorePattern': '^_',
-					'varsIgnorePattern': '^_',
-					'ignoreRestSiblings': true,
-				},
-			],
-			'@typescript-eslint/no-explicit-any': 'warn',
-			'@stylistic/implicit-arrow-linebreak': [
-				'error', 'beside',
-			],
-			'@stylistic/array-bracket-newline': [
-				'error', 'consistent',
-			],
-			'@stylistic/no-multi-spaces': [
-				'error', { 'includeTabs': true },
+				'error', { after: true, before: false },
 			],
 		},
 	},
