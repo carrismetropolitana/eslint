@@ -2,19 +2,21 @@
 
 /* * */
 
+import eslintJs from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import perfectionist from 'eslint-plugin-perfectionist';
+import perfectionistNatural from 'eslint-plugin-perfectionist/configs/recommended-natural';
+
 import stylistic from '@stylistic/eslint-plugin';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import parserTs from '@typescript-eslint/parser';
-import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
 import globals from 'globals';
 import nextLintPlugin from 'next/eslint-plugin';
-import perfectionistNatural from 'eslint-plugin-perfectionist/configs/recommended-natural';
 
 /* * */
 
 export default tseslint.config(
-	eslint.configs.recommended,
+	eslintJs.configs.recommended,
 	...tseslint.configs.strict,
 	...tseslint.configs.stylistic,
 	...perfectionistNatural,
@@ -41,11 +43,12 @@ export default tseslint.config(
 		],
 
 		plugins: {
+			perfectionist,
 			nextLintPlugin,
-			perfectionistNatural,
 			'@stylistic': stylistic,
 			'@tsplugin': tsPlugin,
 		},
+
 		rules: {
 			'no-var': 'error',
 			'array-bracket-newline': [
