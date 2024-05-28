@@ -1,6 +1,6 @@
 /* * */
 
-import nodeConfig from './rules/node.config.js';
+import nodeConfig from './rules/node.rule.js';
 
 /* * */
 

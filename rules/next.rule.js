@@ -8,6 +8,8 @@ import parserTs from '@typescript-eslint/parser';
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import globals from 'globals';
+import nextLintPlugin from 'next/eslint-plugin';
+import perfectionistNatural from 'eslint-plugin-perfectionist/configs/recommended-natural';
 
 /* * */
 
@@ -15,6 +17,7 @@ export default tseslint.config(
 	eslint.configs.recommended,
 	...tseslint.configs.strict,
 	...tseslint.configs.stylistic,
+	...perfectionistNatural,
 
 	{
 		languageOptions: {
@@ -25,6 +28,11 @@ export default tseslint.config(
 				...globals.node,
 			},
 		},
+		'parserOptions': {
+			'ecmaFeatures': {
+				'jsx': true,
+			},
+		},
 	},
 
 	{
@@ -33,6 +41,8 @@ export default tseslint.config(
 		],
 
 		plugins: {
+			nextLintPlugin,
+			perfectionistNatural,
 			'@stylistic': stylistic,
 			'@tsplugin': tsPlugin,
 		},

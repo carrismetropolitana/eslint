@@ -1,20 +1,19 @@
 {
     "name": "@carrismetropolitana/eslint",
-    "type": "module",
-    "version": "2024.5.71115",
+    "version": "1.0.0",
     "main": "./dist/index.js",
+    "type": "module",
     "types": "./dist/index.d.ts",
     "files": [
         "dist/"
     ],
     "scripts": {
-        "start": "tsc && node build/index.js",
+        "start": "tsc && node dist/index.js",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
         "build": "tsc",
         "watch": "tsc -w",
-        "bump": "node bump-version.js",
-        "send": "npm run bump && rm -rf ./dist && npm run build && npm publish"
+        "bump": "node bump-version.js"
     },
     "publishConfig": {
         "access": "public"

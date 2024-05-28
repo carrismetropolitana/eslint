@@ -5,17 +5,11 @@
     "rootDir": ".",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "paths": {
-      "@/config/*": ["config/*"],
-      "@/modules/*": ["modules/*"],
-      "@/services/*": ["services/*"],
-      "@/parsers/*": ["parsers/*"]
-    },
     "allowJs": true,
     "outDir": "dist",
     "sourceMap": true,
     "esModuleInterop": true,
     "declaration": true
   },
-  "exclude": ["**/node_modules", "**/.*/", "**/build/"]
+  "exclude": ["**/node_modules", "**/.*/", "**/dist/"]
 }

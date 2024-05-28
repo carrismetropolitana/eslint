@@ -1,7 +1,7 @@
 /* * */
 
-import node from './rules/node.config.js';
-import next from './rules/next.config.js';
+import node from './rules/node.rule.js';
+import next from './rules/next.rule.js';
 
 /* * */
 
