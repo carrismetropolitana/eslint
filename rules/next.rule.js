@@ -158,15 +158,6 @@ export default tseslint.config(
 			'rest-spread-spacing': [
 				'error', 'never',
 			],
-			'semi': [
-				'error', 'always',
-			],
-			'semi-spacing': [
-				'error', { after: true, before: false },
-			],
-			'semi-style': [
-				'error', 'last',
-			],
 			'space-before-blocks': [
 				'error', 'always',
 			],
