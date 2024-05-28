@@ -64,7 +64,7 @@ export default tseslint.config(
 			'@stylistic/jsx-one-expression-per-line': 0, // ['error', { allow: 'non-jsx' }], <-- this is not working :(
 			'@stylistic/jsx-quotes': ['error', 'prefer-double'],
 			'@stylistic/jsx-self-closing-comp': ['error', { component: true, html: true }],
-			'@stylistic/jsx-sort-props': ['error', { ignoreCase: true, locale: 'auto' | 'any valid locale', multiline: 'last', reservedFirst: ['key', 'ref'], shorthandLast: true }],
+			'@stylistic/jsx-sort-props': ['error', { ignoreCase: true, multiline: 'last', reservedFirst: ['key', 'ref'], shorthandLast: true }],
 			'@stylistic/no-tabs': ['error', { allowIndentationTabs: true }],
 			'no-unused-vars': 'warn',
 			'no-var': 'error',
