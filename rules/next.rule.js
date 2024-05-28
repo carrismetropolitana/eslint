@@ -49,6 +49,11 @@ export default tseslint.config(
 	},
 
 	{
+		extends: [tseslint.configs.disableTypeChecked],
+		files: ['**/*.js'],
+	},
+
+	{
 		files: [
 			'**/*.js', '**/*.ts', '**/*.tsx', '**/*.jsx',
 		],
