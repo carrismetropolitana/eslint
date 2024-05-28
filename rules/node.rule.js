@@ -53,6 +53,13 @@ export default tseslint.config(
 			'**/*.js', '**/*.ts', '**/*.tsx', '**/*.jsx',
 		],
 		rules: {
+
+			'@stylistic/indent': ['error', 'tab'],
+
+			'@stylistic/no-tabs': [
+				'error', { allowIndentationTabs: true },
+			],
+
 			'array-bracket-newline': [
 				'error', 'consistent',
 			],
@@ -86,9 +93,6 @@ export default tseslint.config(
 			],
 			'dot-location': [
 				'error', 'property',
-			],
-			'eol-last': [
-				'error', 'never',
 			],
 			'func-call-spacing': [
 				'error', 'never',
@@ -129,7 +133,7 @@ export default tseslint.config(
 			'no-mixed-spaces-and-tabs': 'error',
 			'no-multi-spaces': 'error',
 			'no-multiple-empty-lines': [
-				'error', { max: 1, maxBOF: 0, maxEOF: 0 },
+				'error', { max: 1, maxBOF: 0 },
 			],
 			'no-trailing-spaces': 'error',
 			'no-var': 'error',
@@ -162,7 +166,7 @@ export default tseslint.config(
 				'error', 'always',
 			],
 			'semi-spacing': [
-				'error', { 'after': true, 'before': false },
+				'error', { after: true, before: false },
 			],
 			'semi-style': [
 				'error', 'last',
@@ -197,4 +201,4 @@ export default tseslint.config(
 			],
 		},
 	},
-);
+)
