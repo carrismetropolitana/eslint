@@ -58,12 +58,8 @@ export default tseslint.config(
 			'**/*.js', '**/*.ts', '**/*.tsx', '**/*.jsx',
 		],
 		rules: {
-			'@stylistic/indent': [
-				'error', 'tab',
-			],
-			'@stylistic/no-tabs': [
-				'error', { allowIndentationTabs: true },
-			],
+			'@stylistic/indent': ['error', 'tab'],
+			'@stylistic/no-tabs': ['error', { allowIndentationTabs: true }],
 			'no-unused-vars': 'warn',
 			'no-var': 'error',
 		},
