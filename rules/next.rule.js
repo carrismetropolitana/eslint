@@ -59,9 +59,9 @@ export default tseslint.config(
 		],
 		rules: {
 			'@stylistic/indent': ['error', 'tab'],
+			'@stylistic/jsx/jsx-one-expression-per-line': ['error', { allow: 'non-jsx' }],
 			'@stylistic/jsx-indent': [2, 'tab', { checkAttributes: true, indentLogicalExpressions: true }],
 			'@stylistic/jsx-indent-props': [2, 'tab'],
-			'@stylistic/jsx-one-expression-per-line': [1, { allow: 'non-jsx' }],
 			'@stylistic/jsx-quotes': ['error', 'prefer-double'],
 			'@stylistic/jsx-self-closing-comp': ['error', { component: true, html: true }],
 			'@stylistic/jsx-sort-props': [1, { ignoreCase: true, locale: 'auto' | 'any valid locale', multiline: 'last', reservedFirst: ['key', 'ref'], shorthandLast: true }],
