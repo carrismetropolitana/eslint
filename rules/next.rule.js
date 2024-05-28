@@ -59,10 +59,12 @@ export default tseslint.config(
 		],
 		rules: {
 			'@stylistic/indent': ['error', 'tab'],
-			'@stylistic/jsx/jsx-indent-props': [2, 'tab'],
-			'@stylistic/no-tabs': [
-				'error', { allowIndentationTabs: true },
-			],
+			'@stylistic/jsx-indent': [2, 'tab', { checkAttributes: true, indentLogicalExpressions: true }],
+			'@stylistic/jsx-indent-props': [2, 'tab'],
+			'@stylistic/jsx-one-expression-per-line': 'non-jsx',
+			'@stylistic/jsx-self-closing-comp': ['error', { component: true, html: true }],
+			'@stylistic/jsx-sort-props': [1, { ignoreCase: true, locale: 'auto' | 'any valid locale', multiline: 'last', reservedFirst: ['key', 'ref'], shorthandLast: true }],
+			'@stylistic/no-tabs': ['error', { allowIndentationTabs: true }],
 			'no-unused-vars': 'warn',
 			'no-var': 'error',
 		},
