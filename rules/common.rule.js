@@ -61,6 +61,7 @@ export default tseslint.config(
 			'@stylistic/indent': ['error', 'tab'],
 			'@stylistic/no-tabs': 'off',
 			'@typescript-eslint/no-unused-vars': 'off',
+			'no-unreachable': 'warn',
 			'no-unused-vars': 'warn',
 			'no-var': 'error',
 		},
