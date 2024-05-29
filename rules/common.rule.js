@@ -59,6 +59,7 @@ export default tseslint.config(
 		],
 		rules: {
 			'@stylistic/indent': ['error', 'tab'],
+			'@stylistic/js/comma-dangle': ['error', 'always-multiline'],
 			'@stylistic/no-tabs': 'off',
 			'@stylistic/semi': ['error', 'always', { omitLastInOneLineBlock: false }],
 			'@typescript-eslint/no-unused-vars': 'off',
