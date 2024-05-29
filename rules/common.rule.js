@@ -59,7 +59,7 @@ export default tseslint.config(
 		],
 		rules: {
 			'@stylistic/indent': ['error', 'tab'],
-			'@stylistic/no-tabs': ['error', { allowIndentationTabs: true }],
+			'@stylistic/no-tabs': 'off',
 			'@typescript-eslint/no-unused-vars': 'off',
 			'no-unused-vars': 'warn',
 			'no-var': 'error',
