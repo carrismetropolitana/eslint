@@ -4,7 +4,9 @@
 	"main": "./dist/index.js",
 	"type": "module",
 	"types": "./dist/index.d.ts",
-	"files": ["dist/"],
+	"files": [
+		"dist/"
+	],
 	"scripts": {
 		"start": "tsc && node dist/index.js",
 		"lint": "eslint .",
@@ -42,6 +44,7 @@
 		"eslint-plugin-perfectionist": "2.10.0",
 		"globals": "15.3.0",
 		"stylelint": "16.6.1",
+		"stylelint-config-clean-order": "5.4.2",
 		"stylelint-config-standard-scss": "13.1.0",
 		"typescript": "5.4.5",
 		"typescript-eslint": "7.11.0"

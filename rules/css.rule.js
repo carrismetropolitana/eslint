@@ -3,7 +3,11 @@
 /* * */
 
 export default {
-	extends: ['stylelint-config-standard'],
+	extends: [
+		// 'stylelint-config-standard',
+		'stylelint-config-clean-order',
+	],
+	fix: true,
 	rules: {
 		'unit-allowed-list': ['px', '%'],
 	},
