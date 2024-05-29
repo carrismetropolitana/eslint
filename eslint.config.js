@@ -1,7 +1,7 @@
 /* * */
 
-import nodeConfig from './rules/node.rule.js';
+import nodeConfig from './rules/node.rule.js'
 
 /* * */
 
-export default nodeConfig;
+export default nodeConfig

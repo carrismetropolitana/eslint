@@ -1,11 +1,11 @@
 /* * */
 
-import node from './rules/node.rule.js';
-import next from './rules/next.rule.js';
+import next from './rules/next.rule.js'
+import node from './rules/node.rule.js'
 
 /* * */
 
 export {
-	node,
 	next,
-};
+	node,
+}
