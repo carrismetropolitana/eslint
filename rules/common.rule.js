@@ -60,6 +60,7 @@ export default tseslint.config(
 		rules: {
 			'@stylistic/indent': ['error', 'tab'],
 			'@stylistic/no-tabs': 'off',
+			'@stylistic/semi': ['error', 'always', { omitLastInOneLineBlock: false }],
 			'@typescript-eslint/no-unused-vars': 'off',
 			'no-unreachable': 'warn',
 			'no-unused-vars': 'warn',
