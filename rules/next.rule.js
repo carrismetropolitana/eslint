@@ -50,7 +50,7 @@ export default tseslint.config(
 
 	{
 		extends: [tseslint.configs.disableTypeChecked],
-		files: ['**/*.js'],
+		files: ['**/*.js', '**/*.mjs'],
 	},
 
 	{
@@ -66,6 +66,7 @@ export default tseslint.config(
 			'@stylistic/jsx-self-closing-comp': ['error', { component: true, html: true }],
 			'@stylistic/jsx-sort-props': ['error', { ignoreCase: true, multiline: 'last', reservedFirst: ['key', 'ref'], shorthandLast: true }],
 			'@stylistic/no-tabs': ['error', { allowIndentationTabs: true }],
+			'@typescript-eslint/no-unused-vars': 'off',
 			'no-unused-vars': 'warn',
 			'no-var': 'error',
 			'perfectionist/sort-jsx-props': 'off',
