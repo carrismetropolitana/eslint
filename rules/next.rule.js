@@ -2,55 +2,22 @@
 
 /* * */
 
-import eslint from '@eslint/js'
-import stylistic from '@stylistic/eslint-plugin'
-import perfectionist from 'eslint-plugin-perfectionist'
-import perfectionistNatural from 'eslint-plugin-perfectionist/configs/recommended-natural'
 import globals from 'globals'
-import tseslint from 'typescript-eslint'
+
+import commonRule from './common.rule.js'
 
 /* * */
 
-export default tseslint.config(
+export default [
 
-	{
-		// config with just ignores is the replacement for `.eslintignore`
-		ignores: ['**/build/**', '**/dist/**', '**/.next/**'],
-	},
-
-	eslint.configs.recommended,
-
-	...tseslint.configs.strict,
-	...tseslint.configs.stylistic,
-
-	{
-		plugins: {
-			'@stylistic': stylistic,
-			perfectionist,
-		},
-	},
-
-	perfectionistNatural,
-
-	stylistic.configs['recommended-flat'],
+	...commonRule,
 
 	{
 		languageOptions: {
-			ecmaVersion: 2020,
 			globals: {
-				...globals.node,
+				...globals.browser,
 			},
-			parser: tseslint.parser,
-			parserOptions: {
-				project: true,
-			},
-			sourceType: 'module',
 		},
-	},
-
-	{
-		extends: [tseslint.configs.disableTypeChecked],
-		files: ['**/*.js', '**/*.mjs'],
 	},
 
 	{
@@ -58,19 +25,14 @@ export default tseslint.config(
 			'**/*.js', '**/*.ts', '**/*.tsx', '**/*.jsx',
 		],
 		rules: {
-			'@stylistic/indent': ['error', 'tab'],
 			'@stylistic/jsx-indent': [2, 'tab', { checkAttributes: true, indentLogicalExpressions: true }],
 			'@stylistic/jsx-indent-props': [2, 'tab'],
 			'@stylistic/jsx-one-expression-per-line': 0, // ['error', { allow: 'non-jsx' }], <-- this is not working :(
 			'@stylistic/jsx-quotes': ['error', 'prefer-double'],
 			'@stylistic/jsx-self-closing-comp': ['error', { component: true, html: true }],
 			'@stylistic/jsx-sort-props': ['error', { ignoreCase: true, multiline: 'last', reservedFirst: ['key', 'ref'], shorthandLast: true }],
-			'@stylistic/no-tabs': ['error', { allowIndentationTabs: true }],
-			'@typescript-eslint/no-unused-vars': 'off',
-			'no-unused-vars': 'warn',
-			'no-var': 'error',
 			'perfectionist/sort-jsx-props': 'off',
 		},
 	},
 
-)
+]
