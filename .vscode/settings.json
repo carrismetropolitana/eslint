@@ -10,6 +10,11 @@
 	"editor.formatOnSave": false,
 	"eslint.format.enable": true,
 
+	// Disable the default CSS formatter, use stylelint instead
+	"css.validate": false,
+	"less.validate": false,
+	"scss.validate": false,
+
 	"editor.insertSpaces": false,
 	"editor.detectIndentation": false,
 	"editor.defaultFormatter": "dbaeumer.vscode-eslint",

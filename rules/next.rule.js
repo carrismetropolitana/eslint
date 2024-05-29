@@ -1,10 +1,10 @@
-/** @type { import("eslint").Linter.FlatConfig } */
+/** @type {import('@typescript-eslint/utils').TSESLint.FlatConfigArray} */
 
 /* * */
 
-import globals from 'globals'
+import globals from 'globals';
 
-import commonRule from './common.rule.js'
+import commonRule from './common.rule.js';
 
 /* * */
 
@@ -35,4 +35,4 @@ export default [
 		},
 	},
 
-]
+];
