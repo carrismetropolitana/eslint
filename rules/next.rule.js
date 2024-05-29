@@ -25,8 +25,8 @@ export default tseslint.config(
 
 	{
 		plugins: {
-			'@perfectionist': perfectionist,
 			'@stylistic': stylistic,
+			perfectionist,
 		},
 	},
 
@@ -58,7 +58,6 @@ export default tseslint.config(
 			'**/*.js', '**/*.ts', '**/*.tsx', '**/*.jsx',
 		],
 		rules: {
-			'@perfectionist/sort-jsx-props': 'off',
 			'@stylistic/indent': ['error', 'tab'],
 			'@stylistic/jsx-indent': [2, 'tab', { checkAttributes: true, indentLogicalExpressions: true }],
 			'@stylistic/jsx-indent-props': [2, 'tab'],
@@ -69,6 +68,7 @@ export default tseslint.config(
 			'@stylistic/no-tabs': ['error', { allowIndentationTabs: true }],
 			'no-unused-vars': 'warn',
 			'no-var': 'error',
+			'perfectionist/sort-jsx-props': 'off',
 		},
 	},
 
