@@ -9,9 +9,6 @@ export default {
 	],
 	fix: true,
 	rules: {
-		'declaration-property-unit-allowed-list': {
-			'/^transition/': ['ms'],
-		},
 		'unit-allowed-list': ['px', '%', 'ms'],
 	},
 };
