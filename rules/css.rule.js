@@ -12,6 +12,6 @@ export default {
 		'declaration-property-unit-allowed-list': {
 			'/^transition/': ['ms'],
 		},
-		'unit-allowed-list': ['px', '%'],
+		'unit-allowed-list': ['px', '%', 'ms'],
 	},
 };
