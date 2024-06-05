@@ -60,6 +60,7 @@ export default tseslint.config(
 		rules: {
 			'@stylistic/comma-dangle': ['error', 'always-multiline'],
 			'@stylistic/indent': ['error', 'tab'],
+			'@stylistic/multiline-ternary': 'off',
 			'@stylistic/no-tabs': 'off',
 			'@stylistic/semi': ['error', 'always', { omitLastInOneLineBlock: false }],
 			'@typescript-eslint/no-unused-vars': 'warn',
