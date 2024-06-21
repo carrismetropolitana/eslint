@@ -15,7 +15,7 @@ export default tseslint.config(
 
 	{
 		// config with just ignores is the replacement for `.eslintignore`
-		ignores: ['**/build/**', '**/dist/**', '**/.next/**'],
+		ignores: ['**/build/**', '**/dist/**', '**/node_modules/**', '**/.next/**'],
 	},
 
 	eslint.configs.recommended,
