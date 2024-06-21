@@ -34,19 +34,19 @@
 	"author": "João de Vasconcelos",
 	"license": "AGPL-3.0-or-later",
 	"dependencies": {
-		"@eslint/compat": "1.0.1",
-		"@eslint/js": "9.3.0",
-		"@stylistic/eslint-plugin": "2.1.0",
+		"@eslint/compat": "1.1.0",
+		"@eslint/js": "9.5.0",
+		"@stylistic/eslint-plugin": "2.2.2",
 		"@types/eslint": "8.56.10",
 		"@types/eslint__js": "8.42.3",
-		"@types/node": "20.12.12",
+		"@types/node": "20.14.7",
 		"eslint": "8.57.0",
-		"eslint-plugin-perfectionist": "2.10.0",
-		"globals": "15.3.0",
+		"eslint-plugin-perfectionist": "2.11.0",
+		"globals": "15.6.0",
 		"stylelint": "16.6.1",
-		"stylelint-config-clean-order": "5.4.2",
+		"stylelint-config-clean-order": "6.0.0",
 		"stylelint-config-standard-scss": "13.1.0",
-		"typescript": "5.4.5",
-		"typescript-eslint": "7.11.0"
+		"typescript": "5.5.2",
+		"typescript-eslint": "7.13.1"
 	}
 }
