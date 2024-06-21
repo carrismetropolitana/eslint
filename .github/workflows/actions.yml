@@ -29,7 +29,7 @@ jobs:
         working-directory: .
 
       - name: Bump package version
-        run: npx @carrismetropolitana/bump bump
+        run: npx @carrismetropolitana/bumper bump
         working-directory: .
 
       - name: Build package
