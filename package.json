@@ -12,8 +12,7 @@
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
 		"build": "tsc",
-		"watch": "tsc -w",
-		"bump": "node bump-version.js"
+		"watch": "tsc -w"
 	},
 	"publishConfig": {
 		"access": "public"
