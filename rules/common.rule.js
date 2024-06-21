@@ -1,4 +1,4 @@
-/** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig} */
+// /** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig} */
 
 /* * */
 
