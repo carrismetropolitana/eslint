@@ -9,6 +9,6 @@ export default {
 	],
 	fix: true,
 	rules: {
-		'unit-allowed-list': ['px', '%', 'fr', 'ms'],
+		'unit-allowed-list': ['px', '%', 'fr', 'ms', 'deg', 'vh', 'vw'],
 	},
 };
