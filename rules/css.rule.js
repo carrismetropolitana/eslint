@@ -9,6 +9,7 @@ export default {
 	],
 	fix: true,
 	rules: {
+		'comment-empty-line-before': ['always', { ignore: ['after-comment'] }],
 		'declaration-block-no-duplicate-properties': true,
 		'declaration-block-no-shorthand-property-overrides': true,
 		'declaration-block-single-line-max-declarations': 0,
