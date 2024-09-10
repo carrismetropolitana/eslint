@@ -4,8 +4,7 @@
 
 export default {
 	extends: [
-		// 'stylelint-config-standard',
-		'stylelint-config-clean-order',
+		'stylelint-config-standard',
 		'stylelint-config-recess-order',
 	],
 	fix: true,
