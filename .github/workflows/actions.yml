@@ -24,6 +24,10 @@ jobs:
           node-version: 'current'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Enable corepack
+        run: corepack enable
+        working-directory: .
+
       - name: Setup yarn
         run: yarn set version stable
         working-directory: .
