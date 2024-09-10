@@ -25,7 +25,6 @@ export default tseslint.config(
 	{
 		plugins: {
 			'@stylistic': stylistic,
-			perfectionist,
 		},
 	},
 
