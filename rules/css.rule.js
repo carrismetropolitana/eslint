@@ -17,6 +17,7 @@ export default {
 		'length-zero-no-unit': true,
 		'no-irregular-whitespace': true,
 		'rule-empty-line-before': ['always-multi-line'],
+		'selector-class-pattern': null,
 		'shorthand-property-no-redundant-values': true,
 		'unit-allowed-list': ['px', '%', 'fr', 'ms', 'deg', 'vh', 'vw'],
 	},
