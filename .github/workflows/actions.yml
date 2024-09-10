@@ -24,6 +24,14 @@ jobs:
           node-version: 'current'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Setup yarn
+        run: yarn set version stable
+        working-directory: .
+
+      - name: Install yarn
+        run: yarn install
+        working-directory: .
+
       - name: Install dependencies
         run: yarn install
         working-directory: .
