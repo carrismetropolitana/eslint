@@ -5,7 +5,6 @@
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import perfectionist from 'eslint-plugin-perfectionist';
-import perfectionistNatural from 'eslint-plugin-perfectionist/configs/recommended-natural';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
@@ -30,7 +29,7 @@ export default tseslint.config(
 		},
 	},
 
-	perfectionistNatural,
+	perfectionist.configs['recommended-natural'],
 
 	stylistic.configs['recommended-flat'],
 
