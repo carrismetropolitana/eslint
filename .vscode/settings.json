@@ -21,6 +21,13 @@
 		"source.fixAll.eslint": "explicit",
 	},
 
+	"[css]": {
+		"editor.defaultFormatter": "stylelint.vscode-stylelint",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.stylelint": "explicit"
+		}
+	},
+
 	// Silent the stylistic rules in you IDE, but still auto fix them
 	"eslint.rules.customizations": [
 		{ "rule": "style/*", "severity": "off" },
@@ -49,13 +56,6 @@
 		"yaml",
 		"toml",
 		"astro"
-	],
-
-	"[css]": {
-		"editor.defaultFormatter": "stylelint.vscode-stylelint",
-		"editor.codeActionsOnSave": {
-			"source.fixAll.stylelint": "explicit"
-		}
-	}
+	]
 
 }
