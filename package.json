@@ -12,8 +12,7 @@
 		"lint": "eslint .",
 		"build": "tsc",
 		"watch": "tsc -w",
-		"lint:fix": "eslint . --fix",
-		"lint:styles": "stylelint '**/*.css' '**/*.scss'"
+		"lint:fix": "eslint . --fix"
 	},
 	"publishConfig": {
 		"access": "public"
@@ -49,8 +48,5 @@
 		"stylelint-config-standard": "36.0.1",
 		"typescript": "5.6.2",
 		"typescript-eslint": "8.5.0"
-	},
-	"stylelint": {
-		"extends": "@carrismetropolitana/eslint"
 	}
 }
