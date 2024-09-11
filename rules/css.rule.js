@@ -17,7 +17,7 @@ export default {
 		'function-calc-no-unspaced-operator': true,
 		'length-zero-no-unit': true,
 		'no-irregular-whitespace': true,
-		'rule-empty-line-before': ['always-multi-line'],
+		'rule-empty-line-before': ['always-multi-line', { ignore: ['inside-block'] }],
 		'selector-class-pattern': null,
 		'shorthand-property-no-redundant-values': true,
 		'unit-allowed-list': ['px', '%', 'fr', 'ms', 'deg', 'vh', 'vw'],
