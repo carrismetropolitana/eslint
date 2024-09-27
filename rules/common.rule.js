@@ -81,6 +81,7 @@ export default tseslint.config(
 	{
 		files: ['**/*.json'],
 		rules: {
+			'@stylistic/comma-dangle': ['error', 'never'],
 			'jsonc/auto': 'error',
 			'jsonc/sort-keys': ['error', 'asc'],
 		},
