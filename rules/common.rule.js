@@ -87,4 +87,37 @@ export default tseslint.config(
 		},
 	},
 
+	{
+		files: ['package.json'],
+		rules: {
+			'@stylistic/comma-dangle': ['error', 'never'],
+			'jsonc/auto': 'error',
+			'jsonc/sort-keys': [
+				'error',
+				{
+					order: [
+						'name',
+						'version',
+						'author',
+						'license',
+						'homepage',
+						'bugs',
+						'repository',
+						'keywords',
+						'private',
+						'publishConfig',
+						'type',
+						'files',
+						'main',
+						'types',
+						'scripts',
+						'dependencies',
+						'devDependencies',
+					],
+					pathPattern: '.*',
+				},
+			],
+		},
+	},
+
 );

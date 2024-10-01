@@ -1,37 +1,37 @@
 {
 	"name": "@carrismetropolitana/eslint",
 	"version": "1.0.0",
-	"main": "./dist/index.js",
-	"type": "module",
-	"types": "./dist/index.d.ts",
-	"files": [
-		"dist/"
-	],
-	"scripts": {
-		"start": "tsc && node dist/index.js",
-		"lint": "eslint .",
-		"build": "tsc",
-		"watch": "tsc -w",
-		"lint:fix": "eslint . --fix"
-	},
-	"publishConfig": {
-		"access": "public"
-	},
+	"author": "João de Vasconcelos",
+	"license": "AGPL-3.0-or-later",
 	"homepage": "https://github.com/carrismetropolitana/eslint#readme",
+	"bugs": {
+		"url": "https://github.com/carrismetropolitana/eslint/issues"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/carrismetropolitana/eslint.git"
-	},
-	"bugs": {
-		"url": "https://github.com/carrismetropolitana/eslint/issues"
 	},
 	"keywords": [
 		"public transit",
 		"eslint",
 		"lint"
 	],
-	"author": "João de Vasconcelos",
-	"license": "AGPL-3.0-or-later",
+	"publishConfig": {
+		"access": "public"
+	},
+	"type": "module",
+	"files": [
+		"dist/"
+	],
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"scripts": {
+		"build": "tsc",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"start": "tsc && node dist/index.js",
+		"watch": "tsc -w"
+	},
 	"dependencies": {
 		"@eslint/compat": "1.1.1",
 		"@eslint/js": "9.11.1",
