@@ -114,6 +114,10 @@ export default tseslint.config(
 						'dependencies',
 						'devDependencies',
 					],
+					pathPattern: '^$',
+				},
+				{
+					order: { type: 'asc' },
 					pathPattern: '.*',
 				},
 			],
