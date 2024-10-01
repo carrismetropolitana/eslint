@@ -17,7 +17,7 @@ export default {
 		'function-calc-no-unspaced-operator': true,
 		'length-zero-no-unit': true,
 		'no-irregular-whitespace': true,
-		'rule-empty-line-before': ['always-multi-line', { ignore: ['inside-block'] }],
+		'rule-empty-line-before': ['always-multi-line', { ignore: ['inside-block', 'after-comment'] }],
 		'selector-class-pattern': [
 			/^[a-z]+([A-Z][a-z0-9]*)*$/,
 			{ message: 'Selector should be written in camelCase.' },
