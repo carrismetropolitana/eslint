@@ -18,7 +18,10 @@ export default {
 		'length-zero-no-unit': true,
 		'no-irregular-whitespace': true,
 		'rule-empty-line-before': ['always-multi-line', { ignore: ['inside-block'] }],
-		'selector-class-pattern': null,
+		'selector-class-pattern': [
+			/^[a-z]+([A-Z][a-z0-9]*)*$/,
+			{ message: 'Selector should be written in camelCase.' },
+		],
 		'shorthand-property-no-redundant-values': true,
 		'unit-allowed-list': ['px', '%', 'fr', 'ms', 'deg', 'vh', 'vw'],
 	},
