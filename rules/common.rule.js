@@ -15,7 +15,7 @@ export default tseslint.config(
 
 	{
 		// config with just ignores is the replacement for `.eslintignore`
-		ignores: ['**/build/**', '**/dist/**', '**/node_modules/**', '**/.next/**', '**/.next/**', '**/public/**'],
+		ignores: ['**/build/**', '**/dist/**', '**/node_modules/**', '**/.next/**', '**/.next/**', '**/public/**', '**/*lock.json'],
 	},
 
 	eslint.configs.recommended,
@@ -88,7 +88,7 @@ export default tseslint.config(
 	},
 
 	{
-		files: ['package.json'],
+		files: ['**/package.json'],
 		rules: {
 			'@stylistic/comma-dangle': ['error', 'never'],
 			'jsonc/auto': 'error',
