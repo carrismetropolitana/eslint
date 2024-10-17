@@ -37,7 +37,7 @@ jobs:
         working-directory: .
 
       - name: LIST Publish package to NPM
-        run: ls -la
+        run: pwd && ls -la
         working-directory: .
 
       - name: Publish package to NPM
