@@ -36,12 +36,8 @@ jobs:
         run: npm run build
         working-directory: .
 
-      - name: LIST Publish package to NPM
-        run: pwd && ls -la
-        working-directory: .
-
       - name: Publish package to NPM
-        run: npm publish --access public
-        working-directory: ./eslint
+        run: pwd && ls -la && npm publish --access public
+        working-directory: ../eslint
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
