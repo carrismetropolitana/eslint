@@ -42,6 +42,6 @@ jobs:
 
       - name: Publish package to NPM
         run: npm publish --access public
-        working-directory: .
+        working-directory: ./eslint
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
