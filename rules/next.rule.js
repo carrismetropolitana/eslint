@@ -2,6 +2,7 @@
 
 /* * */
 
+import nextPlugin from '@next/eslint-plugin-next';
 import globals from 'globals';
 
 import commonRule from './common.rule.js';
@@ -11,6 +12,18 @@ import commonRule from './common.rule.js';
 export default [
 
 	...commonRule,
+
+	{
+		files: ['**/*.ts', '**/*.tsx'],
+		plugins: {
+			'@next/next': nextPlugin,
+		},
+		rules: {
+			...nextPlugin.configs.recommended.rules,
+			...nextPlugin.configs['core-web-vitals'].rules,
+			'@next/next/no-img-element': 'error',
+		},
+	},
 
 	{
 		languageOptions: {
@@ -33,10 +46,6 @@ export default [
 			'@stylistic/jsx-sort-props': ['error', { ignoreCase: true, multiline: 'last', reservedFirst: ['key', 'ref'], shorthandLast: true }],
 			'perfectionist/sort-jsx-props': 'off',
 		},
-	},
-
-	{
-		extends: ['plugin:@next/next/recommended'],
 	},
 
 ];
