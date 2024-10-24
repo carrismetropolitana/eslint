@@ -13,8 +13,6 @@ export default [
 
 	...commonRule,
 
-	...nextPlugin.rules,
-
 	{
 		files: ['**/*.ts', '**/*.tsx'],
 		plugins: {
