@@ -57,6 +57,7 @@ export default tseslint.config(
 			'**/*.js', '**/*.ts', '**/*.tsx', '**/*.jsx', '**/*.json',
 		],
 		rules: {
+			'@perfectionist/sort-imports': ['error', { partitionByComment: true }],
 			'@stylistic/comma-dangle': ['error', 'always-multiline'],
 			'@stylistic/indent': ['error', 'tab'],
 			'@stylistic/key-spacing': ['error', {
