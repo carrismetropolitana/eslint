@@ -74,7 +74,7 @@ export default tseslint.config(
 			'no-unused-vars': 'off',
 			'no-var': 'error',
 			'perfectionist/sort-imports': ['error', { partitionByComment: true }],
-			'perfectionist/sort-modules': ['error', { partitionByComment: true }],
+			'perfectionist/sort-modules': ['off'],
 			'perfectionist/sort-objects': ['error', { partitionByComment: true }],
 		},
 	},
