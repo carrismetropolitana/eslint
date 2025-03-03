@@ -120,8 +120,8 @@ export default tseslint.config(
 					pathPattern: '^$',
 				},
 				{
-					hasProperties: ['types', 'require', 'import'],
-					order: ['types', 'require', 'import'],
+					hasProperties: ['types', 'import'],
+					order: ['types', 'import'],
 					pathPattern: '.*',
 				},
 				{
