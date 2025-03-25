@@ -125,6 +125,11 @@ export default tseslint.config(
 					pathPattern: '.*',
 				},
 				{
+					hasProperties: ['types', 'default'],
+					order: ['types', 'default'],
+					pathPattern: '.*',
+				},
+				{
 					order: { type: 'asc' },
 					pathPattern: '.*',
 				},
