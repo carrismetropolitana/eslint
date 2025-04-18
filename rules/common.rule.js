@@ -100,6 +100,7 @@ export default tseslint.config(
 				{
 					order: [
 						'name',
+						'description',
 						'version',
 						'author',
 						'license',
