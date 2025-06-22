@@ -1,5 +1,3 @@
-// /** @type {import("@typescript-eslint/utils").TSESLint.FlatESLint} */
-
 /* * */
 
 import eslint from '@eslint/js';
@@ -15,7 +13,15 @@ export default tseslint.config(
 
 	{
 		// config with just ignores is the replacement for `.eslintignore`
-		ignores: ['**/build/**', '**/dist/**', '**/node_modules/**', '**/.next/**', '**/.next/**', '**/public/**', '**/*lock.json'],
+		ignores: [
+			'**/build/**',
+			'**/dist/**',
+			'**/node_modules/**',
+			'**/.next/**',
+			'**/.next/**',
+			'**/public/**',
+			'**/*lock.json',
+		],
 	},
 
 	eslint.configs.recommended,
@@ -31,11 +37,11 @@ export default tseslint.config(
 
 	perfectionist.configs['recommended-natural'],
 
-	stylistic.configs['recommended-flat'],
+	stylistic.configs['recommended'],
 
 	{
 		languageOptions: {
-			ecmaVersion: 2020,
+			ecmaVersion: 'latest',
 			globals: {
 				...globals.node,
 			},
@@ -53,9 +59,7 @@ export default tseslint.config(
 	},
 
 	{
-		files: [
-			'**/*.js', '**/*.ts', '**/*.tsx', '**/*.jsx', '**/*.json',
-		],
+		files: ['**/*.js', '**/*.ts', '**/*.tsx', '**/*.jsx', '**/*.json'],
 		rules: {
 			'@stylistic/comma-dangle': ['error', 'always-multiline'],
 			'@stylistic/indent': ['error', 'tab'],

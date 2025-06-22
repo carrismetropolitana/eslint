@@ -1,11 +1,8 @@
-// /** @type {import("@typescript-eslint/utils").TSESLint.FlatESLint} */
-
 /* * */
 
-import nextPlugin from '@next/eslint-plugin-next';
 import globals from 'globals';
 
-import commonRule from './common.rule.js';
+import commonRule from '@/rules/common.js';
 
 /* * */
 
@@ -14,15 +11,13 @@ export default [
 	...commonRule,
 
 	{
+		extends: ['next'],
 		files: ['**/*.ts', '**/*.tsx'],
-		plugins: {
-			'@next/next': nextPlugin,
-		},
-		rules: {
-			...nextPlugin.configs.recommended.rules,
-			...nextPlugin.configs['core-web-vitals'].rules,
-			'@next/next/no-img-element': 'error',
-		},
+		// rules: {
+		// 	...nextPlugin.configs.recommended.rules,
+		// 	...nextPlugin.configs['core-web-vitals'].rules,
+		// 	'@next/next/no-img-element': 'error',
+		// },
 	},
 
 	{
@@ -34,9 +29,7 @@ export default [
 	},
 
 	{
-		files: [
-			'**/*.js', '**/*.ts', '**/*.tsx', '**/*.jsx',
-		],
+		files: ['**/*.js', '**/*.ts', '**/*.tsx', '**/*.jsx'],
 		rules: {
 			'@stylistic/jsx-indent': [2, 'tab', { checkAttributes: true, indentLogicalExpressions: true }],
 			'@stylistic/jsx-indent-props': [2, 'tab'],
