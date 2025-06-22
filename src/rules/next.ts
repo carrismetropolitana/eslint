@@ -1,9 +1,8 @@
 /* * */
 
+import commonRule from '@/rules/common.js';
 import nextPlugin from '@next/eslint-plugin-next';
 import globals from 'globals';
-
-import commonRule from '@/rules/common.js';
 
 /* * */
 

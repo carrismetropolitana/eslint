@@ -77,7 +77,7 @@ export default tseslint.config(
 			'no-unreachable': 'warn',
 			'no-unused-vars': 'off',
 			'no-var': 'error',
-			'perfectionist/sort-imports': ['error', { partitionByComment: true }],
+			'perfectionist/sort-imports': ['error', { groups: ['type-import', ['value-builtin', 'value-external', 'type-internal', 'value-internal', 'type-parent', 'type-sibling', 'type-index', 'value-parent', 'value-sibling', 'value-index', 'ts-equals-import', 'unknown']], ignoreCase: true, order: 'asc', partitionByComment: true, type: 'natural' }],
 			'perfectionist/sort-modules': ['off'],
 			'perfectionist/sort-objects': ['error', { partitionByComment: true }],
 		},
