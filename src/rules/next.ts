@@ -1,5 +1,6 @@
 /* * */
 
+import nextPlugin from '@next/eslint-plugin-next';
 import globals from 'globals';
 
 import commonRule from '@/rules/common.js';
@@ -9,16 +10,6 @@ import commonRule from '@/rules/common.js';
 export default [
 
 	...commonRule,
-
-	{
-		extends: ['next'],
-		files: ['**/*.ts', '**/*.tsx'],
-		// rules: {
-		// 	...nextPlugin.configs.recommended.rules,
-		// 	...nextPlugin.configs['core-web-vitals'].rules,
-		// 	'@next/next/no-img-element': 'error',
-		// },
-	},
 
 	{
 		languageOptions: {
@@ -38,6 +29,18 @@ export default [
 			'@stylistic/jsx-self-closing-comp': ['error', { component: true, html: true }],
 			'@stylistic/jsx-sort-props': ['error', { ignoreCase: true, multiline: 'last', reservedFirst: ['key', 'ref'], shorthandLast: true }],
 			'perfectionist/sort-jsx-props': 'off',
+		},
+	},
+
+	{
+		name: 'Next Plugin',
+		plugins: {
+			'@next/next': nextPlugin,
+			'rules': {
+				...nextPlugin.configs.recommended.rules,
+				...nextPlugin.configs['core-web-vitals'].rules,
+				'@next/next/no-img-element': 'error',
+			},
 		},
 	},
 
