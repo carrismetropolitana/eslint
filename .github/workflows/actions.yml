@@ -28,7 +28,7 @@ jobs:
         run: npm install
 
       - name: Bump package version
-        run: npx @helperkits/bumper bump
+        run: npx @helperkits/bumper package.json
 
       - name: Build package
         run: npm run build
