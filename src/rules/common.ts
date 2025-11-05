@@ -94,7 +94,6 @@ export default tseslint.config(
 			'@typescript-eslint/no-extraneous-class': 'off',
 			'@typescript-eslint/explicit-function-return-type': 'off',
 			'@typescript-eslint/no-explicit-any': 'warn',
-			'@typescript-eslint/prefer-nullish-coalescing': 'error',
 			'@typescript-eslint/prefer-optional-chain': 'error',
 			'@typescript-eslint/no-non-null-assertion': 'warn',
 			'@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
@@ -270,5 +269,5 @@ export default tseslint.config(
 			],
 		},
 	},
-	
+
 );
