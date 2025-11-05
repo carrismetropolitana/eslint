@@ -8,10 +8,7 @@ ESLint rules and configuration for Carris Metropolitana codebases, providing con
 # 1. Install ESLint configuration
 npm install @carrismetropolitana/eslint
 
-# 2. Get VS Code snippets (optional but recommended)
-npx carris-eslint-snippets
-
-# 3. Create eslint.config.mjs
+# 2. Create eslint.config.mjs
 echo "import config from '@carrismetropolitana/eslint'; export default config;" > eslint.config.mjs
 ```
 
@@ -24,8 +21,6 @@ echo "import config from '@carrismetropolitana/eslint'; export default config;" 
 - **Multiple Configurations**: Specialized configs for Node.js and Next.js projects
 - **React/JSX Support**: Comprehensive React and React Hooks rules for Next.js projects
 - **Naming Conventions**: Enforced naming standards for frontend/backend consistency
-- **VS Code Integration**: Automatic VS Code snippets for consistent React component structure
-- **Code Templates**: Ready-to-use component templates with automated generation
 
 ## Documentation
 
@@ -79,40 +74,3 @@ export default config
 import { nextConfig } from '@carrismetropolitana/eslint'
 export default nextConfig
 ```
-
-### VS Code Snippets (Optional)
-
-Install VS Code snippets for consistent component structure:
-
-```bash
-# Recommended: One-command installation (works anywhere)
-npx carris-eslint-snippets
-```
-
-Alternative methods:
-```bash
-# If you have the package installed locally
-npm run install-snippets
-
-# Manual installation
-# Copy from: node_modules/@carrismetropolitana/eslint/src/snippets/vscode-snippets.json
-```
-
-#### Available Snippets
-
-| Trigger | Description |
-|---------|-------------|
-| `cmfc` | Carris Metropolitana Functional Component (A-E structure) |
-| `cmfcexample` | CM Functional Component with full example (SWR, handlers) |
-| `cmsep` | CM Section separator (`/* * */`) |
-| `cmseca` | CM Section A - Setup variables |
-| `cmsecb` | CM Section B - Fetch data |
-| `cmsecc` | CM Section C - Transform data |
-| `cmsecd` | CM Section D - Handle actions |
-| `cmsece` | CM Section E - Render components |
-
-#### Usage
-1. Create a new `.tsx` file
-2. Type `cmfc` and press `Tab`
-3. Fill in the placeholders using `Tab` navigation
-4. Get a perfectly structured Carris Metropolitana component!

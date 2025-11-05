@@ -21,14 +21,10 @@
 	},
 	"type": "module",
 	"files": [
-		"dist",
-		"src/snippets/install-snippets.js"
+		"dist"
 	],
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
-	"bin": {
-		"carris-eslint-snippets": "src/snippets/install-snippets.js"
-	},
 	"scripts": {
 		"build": "npm run clean && tsc && resolve-tspaths",
 		"clean": "rm -rf dist",
@@ -37,8 +33,7 @@
 		"docs:clean": "rm -f eslint-effective-config.json linting-rules-analysis.md && echo '🧹 Documentation files cleaned!'",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
-		"start": "node dist/index.js",
-		"install-snippets": "node src/snippets/install-snippets.js"	
+		"start": "node dist/index.js"
 	},
 	"dependencies": {
 		"@eslint/compat": "1.3.0",
