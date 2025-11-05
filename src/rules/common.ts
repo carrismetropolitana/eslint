@@ -1,4 +1,8 @@
-/* * */
+/**
+ * Common ESLint configuration for TypeScript projects
+ * Includes base rules, TypeScript support, code styling, and JSON configuration
+ * 
+ */
 
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
@@ -10,35 +14,35 @@ import tseslint from 'typescript-eslint';
 /* * */
 
 export default tseslint.config(
-
+	
+	// Ignore patterns
 	{
-		// config with just ignores is the replacement for `.eslintignore`
 		ignores: [
 			'**/build/**',
 			'**/dist/**',
 			'**/node_modules/**',
-			'**/.next/**',
 			'**/.next/**',
 			'**/public/**',
 			'**/*lock.json',
 		],
 	},
 
+	// Base configurations
 	eslint.configs.recommended,
-
 	...tseslint.configs.strict,
-	...tseslint.configs.stylistic,
 
+	// Plugins setup
 	{
 		plugins: {
 			'@stylistic': stylistic,
 		},
 	},
 
+	// Plugin configurations
 	perfectionist.configs['recommended-natural'],
-
 	stylistic.configs['recommended'],
 
+	// Language options
 	{
 		languageOptions: {
 			ecmaVersion: 'latest',
@@ -53,19 +57,95 @@ export default tseslint.config(
 		},
 	},
 
+	// TypeScript-specific rules (only for TS files)
 	{
-		extends: [tseslint.configs.disableTypeChecked],
-		files: ['**/*.js', '**/*.mjs'],
+		files: ['**/*.{ts,tsx}'],
+		languageOptions: {
+			parserOptions: {
+				project: true,
+			},
+		},
+		rules: {
+			// TypeScript specific rules that require type checking
+			'@typescript-eslint/no-floating-promises': 'error',
+			'@typescript-eslint/await-thenable': 'error',
+			'@typescript-eslint/no-misused-promises': 'error',
+			'@typescript-eslint/switch-exhaustiveness-check': 'error',
+		},
 	},
 
+	// Disable type-checked rules for JS files
 	{
-		files: ['**/*.js', '**/*.ts', '**/*.tsx', '**/*.jsx', '**/*.json'],
+		files: ['**/*.{js,jsx}'],
+		...tseslint.configs.disableTypeChecked,
+	},
+
+	// Common rules for all files
+	{
+		files: ['**/*.{js,ts,tsx,jsx}'],
 		rules: {
+			// Core language rules
+			'no-console': 'warn',
+			'eqeqeq': ['error', 'always', { null: 'ignore' }],
+			'no-multiple-empty-lines': ['error', { max: 2, maxBOF: 0, maxEOF: 1 }],
+
+			// TypeScript specific rules (non-type-checking ones)
+			'@typescript-eslint/no-unused-vars': 'warn',
+			'@typescript-eslint/no-extraneous-class': 'off',
+			'@typescript-eslint/explicit-function-return-type': 'off',
+			'@typescript-eslint/no-explicit-any': 'warn',
+			'@typescript-eslint/prefer-nullish-coalescing': 'error',
+			'@typescript-eslint/prefer-optional-chain': 'error',
+			'@typescript-eslint/no-non-null-assertion': 'warn',
+			'@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
+
+			// Naming conventions
+			'@typescript-eslint/naming-convention': [
+				'error',
+				// Variables and functions: camelCase
+				{
+					selector: 'variableLike',
+					format: ['camelCase'],
+					leadingUnderscore: 'allow',
+				},
+				{
+					selector: 'function',
+					format: ['camelCase'],
+				},
+				// Constants: SCREAMING_SNAKE_CASE
+				{
+					selector: 'variable',
+					modifiers: ['const', 'global'],
+					format: ['UPPER_CASE', 'camelCase'], // Allow both for flexibility
+				},
+				// Types and interfaces: PascalCase
+				{
+					selector: 'typeLike',
+					format: ['PascalCase'],
+				},
+				// Class members: camelCase
+				{
+					selector: 'classMethod',
+					format: ['camelCase'],
+				},
+				{
+					selector: 'classProperty',
+					format: ['camelCase'],
+					leadingUnderscore: 'allow',
+				},
+				// Enum members: PascalCase or UPPER_CASE
+				{
+					selector: 'enumMember',
+					format: ['PascalCase', 'UPPER_CASE'],
+				},
+			],
+
+			// Code style rules
+			'@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],
 			'@stylistic/comma-dangle': ['error', 'always-multiline'],
 			'@stylistic/indent': ['error', 'tab'],
 			'@stylistic/key-spacing': ['error', {
 				afterColon: true,
-				align: undefined,
 				beforeColon: false,
 				mode: 'strict',
 			}],
@@ -73,11 +153,19 @@ export default tseslint.config(
 			'@stylistic/no-mixed-spaces-and-tabs': 'error',
 			'@stylistic/no-tabs': 'off',
 			'@stylistic/semi': ['error', 'always', { omitLastInOneLineBlock: false }],
-			'@typescript-eslint/no-unused-vars': 'warn',
-			'no-unreachable': 'warn',
-			'no-unused-vars': 'off',
-			'no-var': 'error',
+			'@stylistic/spaced-comment': ['error', 'always', {
+				block: { 
+					balanced: true,
+					exceptions: ['*'],
+					markers: ['!', '*']
+				},
+				line: { 
+					markers: ['/'],
+					exceptions: ['/', '-', '*', '=']
+				}
+			}],
 
+			// Import sorting and organization
 			'perfectionist/sort-imports': ['error', {
 				groups: [
 					['type'],
@@ -91,14 +179,17 @@ export default tseslint.config(
 				specialCharacters: 'keep',
 				type: 'natural',
 			}],
-
-			'perfectionist/sort-modules': ['off'],
+			'perfectionist/sort-modules': 'off',
 			'perfectionist/sort-objects': ['error', { partitionByComment: true }],
+
+			// Component structure and organization (prefer-const already enabled by base config)
 		},
 	},
 
+	// Json Configuration
 	...eslintPluginJsonc.configs['flat/recommended-with-jsonc'],
 
+	// Base JSON rules
 	{
 		files: ['**/*.json'],
 		rules: {
@@ -108,11 +199,10 @@ export default tseslint.config(
 		},
 	},
 
+	// Package.json specific rules
 	{
 		files: ['**/package.json'],
 		rules: {
-			'@stylistic/comma-dangle': ['error', 'never'],
-			'jsonc/auto': 'error',
 			'jsonc/sort-keys': [
 				'error',
 				{
@@ -156,6 +246,7 @@ export default tseslint.config(
 		},
 	},
 
+	// TypeScript config specific rules
 	{
 		files: ['**/tsconfig.json'],
 		rules: {
@@ -179,5 +270,5 @@ export default tseslint.config(
 			],
 		},
 	},
-
+	
 );
