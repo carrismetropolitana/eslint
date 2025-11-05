@@ -1,7 +1,7 @@
 /**
  * Common ESLint configuration for TypeScript projects
  * Includes base rules, TypeScript support, code styling, and JSON configuration
- * 
+ *
  */
 
 import eslint from '@eslint/js';
@@ -14,7 +14,7 @@ import tseslint from 'typescript-eslint';
 /* * */
 
 export default tseslint.config(
-	
+
 	// Ignore patterns
 	{
 		ignores: [
@@ -67,8 +67,8 @@ export default tseslint.config(
 		},
 		rules: {
 			// TypeScript specific rules that require type checking
-			'@typescript-eslint/no-floating-promises': 'error',
 			'@typescript-eslint/await-thenable': 'error',
+			'@typescript-eslint/no-floating-promises': 'error',
 			'@typescript-eslint/no-misused-promises': 'error',
 			'@typescript-eslint/switch-exhaustiveness-check': 'error',
 		},
@@ -85,57 +85,57 @@ export default tseslint.config(
 		files: ['**/*.{js,ts,tsx,jsx}'],
 		rules: {
 			// Core language rules
-			'no-console': 'warn',
 			'eqeqeq': ['error', 'always', { null: 'ignore' }],
+			'no-console': 'warn',
 			'no-multiple-empty-lines': ['error', { max: 2, maxBOF: 0, maxEOF: 1 }],
 
 			// TypeScript specific rules (non-type-checking ones)
-			'@typescript-eslint/no-unused-vars': 'warn',
-			'@typescript-eslint/no-extraneous-class': 'off',
+			'@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
 			'@typescript-eslint/explicit-function-return-type': 'off',
 			'@typescript-eslint/no-explicit-any': 'warn',
-			'@typescript-eslint/prefer-optional-chain': 'error',
+			'@typescript-eslint/no-extraneous-class': 'off',
 			'@typescript-eslint/no-non-null-assertion': 'warn',
-			'@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
+			'@typescript-eslint/no-unused-vars': 'warn',
+			'@typescript-eslint/prefer-optional-chain': 'error',
 
 			// Naming conventions
 			'@typescript-eslint/naming-convention': [
 				'error',
 				// Variables and functions: camelCase
 				{
-					selector: 'variableLike',
 					format: ['camelCase'],
 					leadingUnderscore: 'allow',
+					selector: 'variableLike',
 				},
 				{
-					selector: 'function',
 					format: ['camelCase'],
+					selector: 'function',
 				},
 				// Constants: SCREAMING_SNAKE_CASE
 				{
-					selector: 'variable',
-					modifiers: ['const', 'global'],
 					format: ['UPPER_CASE', 'camelCase'], // Allow both for flexibility
+					modifiers: ['const', 'global'],
+					selector: 'variable',
 				},
 				// Types and interfaces: PascalCase
 				{
-					selector: 'typeLike',
 					format: ['PascalCase'],
+					selector: 'typeLike',
 				},
 				// Class members: camelCase
 				{
-					selector: 'classMethod',
 					format: ['camelCase'],
+					selector: 'classMethod',
 				},
 				{
-					selector: 'classProperty',
 					format: ['camelCase'],
 					leadingUnderscore: 'allow',
+					selector: 'classProperty',
 				},
 				// Enum members: PascalCase or UPPER_CASE
 				{
-					selector: 'enumMember',
 					format: ['PascalCase', 'UPPER_CASE'],
+					selector: 'enumMember',
 				},
 			],
 
@@ -153,15 +153,15 @@ export default tseslint.config(
 			'@stylistic/no-tabs': 'off',
 			'@stylistic/semi': ['error', 'always', { omitLastInOneLineBlock: false }],
 			'@stylistic/spaced-comment': ['error', 'always', {
-				block: { 
+				block: {
 					balanced: true,
 					exceptions: ['*'],
-					markers: ['!', '*']
+					markers: ['!', '*'],
 				},
-				line: { 
+				line: {
+					exceptions: ['/', '-', '*', '='],
 					markers: ['/'],
-					exceptions: ['/', '-', '*', '=']
-				}
+				},
 			}],
 
 			// Import sorting and organization
