@@ -28,6 +28,9 @@
 	"scripts": {
 		"build": "npm run clean && tsc && resolve-tspaths",
 		"clean": "rm -rf dist",
+		"docs": "npm run docs:generate",
+		"docs:generate": "npm run build && echo 'console.log(\"test\");' > temp-test.js && npx eslint --print-config temp-test.js > eslint-effective-config.json && rm -f temp-test.js && node analyze-rules.js && echo '✅ Comprehensive documentation updated successfully!'",
+		"docs:clean": "rm -f eslint-effective-config.json linting-rules-analysis.md && echo '🧹 Documentation files cleaned!'",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
 		"start": "node dist/index.js"
@@ -43,6 +46,8 @@
 		"eslint": "9.29.0",
 		"eslint-plugin-jsonc": "2.20.1",
 		"eslint-plugin-perfectionist": "4.15.0",
+		"eslint-plugin-react": "^7.37.2",
+		"eslint-plugin-react-hooks": "^5.0.0",
 		"globals": "16.2.0",
 		"postcss": "8.5.6",
 		"stylelint": "16.21.0",
