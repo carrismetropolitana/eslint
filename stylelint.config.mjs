@@ -2,7 +2,7 @@
 
 /* * */
 
-import cssConfig from './rules/css.rule.js'
+import cssConfig from './src/rules/css.rule.js'
 
 /* * */
 
